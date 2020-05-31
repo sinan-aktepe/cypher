@@ -1,6 +1,6 @@
 # cypher
 
-Cypher is an android library for flutter to generate strong passwords simple and fast.
+Cypher is an android library for flutter to generate strong passwords simply and fast.
 
 ## How to Use
 
