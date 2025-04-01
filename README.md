@@ -6,27 +6,52 @@ Cypher is an android library for flutter to generate strong passwords simply and
 
 ```yaml
 # add this line to your dependencies
-cypher:
+cypher: ^2.0.1
 ```
 
 ```dart
 import 'package:cypher/cypher.dart';
 ```
 
+## Generating passwords
+
 ```dart
 Cypher.create(
-    length: 15,
-    useDigits: true,
-    useLowerCase: true,
-    useUpperCase: true,
-    usePunctuation: false);
+  length: 15,
+  useDigits: true,
+  useLowerCase: true,
+  useUpperCase: true,
+  usePunctuation: false,
+);
 ```
 
-| property        | description                                                        | default    |
-| --------------- | ------------------------------------------------------------------ |------------|
-| length          | int (Not Null)(required)                                           |8           |
-| useDigits       | puts digits in password                                            |true        |
-| useLowerCase    | puts digits in password                                            |true        |
-| useUpperCase    | puts digits in password                                            |true        |
-| usePunctuation  | puts punctuations in password                                      |false       |
+## Checking Password Strength
 
+```dart
+final status = Cypher.checkPasswordStrength('password');
+
+print(status.hasDigits);
+print(status.hasLowerCase);
+print(status.hasUpperCase);
+print(status.hasPunctuation);
+```
+
+## Checking Password Strength Using Stream
+
+* Pass **onPasswordChanged** method to a textfield
+```dart
+TextField(
+  onChanged: Cypher.onPasswordChanged,
+)
+```
+* Then you can listen changes
+```dart
+Cypher.onPasswordStatusChange.listen(_onStatusChange);
+
+void _onStatusChange(PasswordStatus status) {
+  print(status.hasDigits);
+  print(status.hasLowerCase);
+  print(status.hasUpperCase);
+  print(status.hasPunctuation);
+}
+```
