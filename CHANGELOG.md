@@ -1,3 +1,7 @@
+## 2.0.1+1
+
+- Added topics
+
 ## 2.0.1
 
 - Added **PasswordStatus** class

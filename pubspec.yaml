@@ -1,7 +1,9 @@
 name: cypher
 description: Generates passwords which can contain digits, lower case letters, upper case letters and punctuations.
-version: 2.0.1
+version: 2.0.1+1
+repository: https://github.com/sinan-aktepe/firecraft
 homepage: https://github.com/sinan-aktepe/cypher
+topics: [password, crypto, cryptography]
 
 environment:
   sdk: ^3.5.0
