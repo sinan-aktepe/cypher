@@ -1,3 +1,7 @@
+## 2.0.2
+
+- Fixed wrong repository url
+
 ## 2.0.1+1
 
 - Added topics
